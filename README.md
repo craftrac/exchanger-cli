@@ -40,14 +40,21 @@ Currently there are 2 actions available:
 You may monitor the database and/or add more data to it using the Adminer web app.
 The administration panel is accessible through "localhost:8080" or any other port you chose during the build process.
 
-## Alternative way to run
+## Alternative method of execution
 In case you don't want to run it using Docker, you can run it locally using PHP 8.2
 and define the corresponding environment variables in the OS
+
 requirements:
 - php 8.2
 - postgresql
+
+In order to prepare the postgresql tables, views and conditions, you need to execute the statements in `init.sql` file in the `dataset` folder. 
+Use a database client such as DBeaver to execute the SQL statements.
+
+To run the CLI from inside the project folder
 ```shell
-php /app/index.php <action> [<parameter1> <parameter2>]
+cd cli
+php index.php <action> [<parameter1> <parameter2>]
 ```
 
 ## Extra notes
