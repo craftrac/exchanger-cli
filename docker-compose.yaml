@@ -2,8 +2,6 @@ version: '3.9'
 services:
   web:
     build: ./cli
-    ports:
-      - "8000:5000"
     environment:
       - API_BASE_PATH=https://openexchangerates.org/api/
       - API_KEY=<your_api_key>
