@@ -1,11 +1,13 @@
 <?php
 namespace Exchanger\Models;
-// include_once(__DIR__ . '/../helpers.php');
 
 
 interface Action
 {
+    // Execute the action
     public function execute();
+    // Prepare the data for a specific purpose (such as db insertion)
+    public function prepare();
 }
 
 

@@ -10,7 +10,6 @@ include_once(__DIR__ . '/helpers.php');
 class Postgres {
     /**
      * PDO instance
-     * @var type 
      */
     public static $error;
     private static $user; 
@@ -21,7 +20,8 @@ class Postgres {
 
     /**
      * return in instance of the PDO object that connects to the Postgres database
-    //  * @return \PDO
+     * @return bool
+     *
      */
     public static function connect() {
         self::$user = Config::$PGSQL_USER; 
@@ -41,6 +41,7 @@ class Postgres {
             if ($pdo) {
                 echo "Connected to the {$name} database successfully!";
                 self::$pdo = $pdo;
+                return true;
             }
         } catch (PDOException $e) {
             die($e->getMessage());

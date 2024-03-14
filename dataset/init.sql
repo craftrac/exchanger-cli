@@ -7,7 +7,7 @@ CHECK (VALUE ~ '^[A-Z]{3}$');
 CREATE TABLE rates (
     currency_date DATE,
     currency_symbol currency_code,
-    currency_rate DECIMAL
+    currency_rate DECIMAL(10,2)
 );
 
 -- add unique constraint to the rates table to prevent duplicates

@@ -16,7 +16,7 @@ Postgres::connect();
 
 // default CLI command
 $actionName = $argc > 1 && !is_date($argv[1]) ? $argv[1] : 'fetch-rates';
-echo $argc;
+
 // Action chooser. You may add more actions here
 switch ($actionName) {
     case "fetch-rates":
@@ -36,8 +36,20 @@ switch ($actionName) {
             Postgres::insertRates($rate);
         }
         break;
-    case 2:
+    // Refreshes a materialized view from the database
+    case "refresh-materialized-view":
+        if ($argc < 2) {
+            echo "Wrong arguments. Usage: php index.php {$action_name} <view_name>\n";
+            exit(1);
+        }
+        $viewName = argv[2];
+        Postgres::refreshMaterializedView($viewName);
         break;
+    // case "<other_action>":
+        // Your code
+        // ...
+        //
+    // break;
     default:
         echo "Wrong action name: {$actionName}\n";
         exit(1);

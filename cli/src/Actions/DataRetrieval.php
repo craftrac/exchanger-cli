@@ -3,6 +3,10 @@ namespace Exchanger\Actions;
 use Exchanger\Models\Action;
 use Exchanger\Services\ExchangeAPI;
 
+/**
+ * DataRetrieval class
+ * This class is used to retrieve data from an source such as an API
+ */
 class DataRetrieval implements Action
 {
     private $source;

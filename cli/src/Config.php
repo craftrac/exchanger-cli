@@ -1,6 +1,11 @@
 <?php
 namespace Exchanger;
 
+/**
+ * Configuration class
+ * You may add more api configuration in the future by defining them inside a
+ * key-value array
+ */
 class Config {
    /**
     * path to the sqlite file

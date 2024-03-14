@@ -2,8 +2,11 @@
 namespace Exchanger\Models;
 use Exchanger\Config; 
 
-// Method: POST, PUT, GET etc
-// Data: array("param" => "value") ==> index.php?param=value
+/**
+ * API model class
+ * This class is used to call an API 
+ * Create a child class in order to use another API
+ */
 abstract class API {
     protected $baseUrl;
     protected $apiKey;

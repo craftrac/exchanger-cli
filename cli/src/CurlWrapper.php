@@ -2,6 +2,12 @@
 namespace Exchanger;
 
 
+/**
+ * This class is used as a wrapper for curl requests against an endpoint
+ *  @param string $endpoint
+ *  @param array $config
+ *  @return array|string
+ */
 class CurlWrapper
 {
     // private $baseUrl;

@@ -2,7 +2,6 @@
     "name": "craftrac/exchanger-cli",
     "type": "project",
     "require": {
-        "altorouter/altorouter": "^2.0"
     },
     "license": "MIT",
     "autoload": {
