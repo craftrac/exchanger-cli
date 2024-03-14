@@ -36,6 +36,10 @@ Currently there are 2 actions available:
 - fetch-rates (fetches data from open exchange rates into the database)
 - refresh-materialized-view (refreshes the database materialized view that contains the statistics)
 
+## Database administration
+You may monitor the database and/or add more data to it using the Adminer web app.
+The administration panel is accessible through "localhost:8080" or any other port you chose during the build process.
+
 ## Alternative way to run
 In case you don't want to run it using Docker, you can run it locally using PHP 8.2
 and define the corresponding environment variables in the OS
