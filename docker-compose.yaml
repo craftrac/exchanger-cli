@@ -1,0 +1,50 @@
+version: '3.9'
+services:
+  web:
+    build: ./cli
+    ports:
+      - "8000:5000"
+    environment:
+      - API_BASE_PATH=https://openexchangerates.org/api/
+      - API_KEY=<your_api_key>
+      - DB_HOST=postgres_db
+      - DB_NAME=rates
+      - DB_USER=root
+      - DB_PASS=example
+    tty: true
+    command: crond -f -l 8
+    networks:
+      - exchanger-network
+    volumes:
+      - ./cli:/app:z
+      - ./log:/var/log:z
+  postgres_db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    volumes:
+      - ./dataset:/docker-entrypoint-initdb.d:z
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: rates
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: example
+    networks:
+      - exchanger-network
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres_db
+    depends_on:
+      - postgres_db
+    networks:
+      - exchanger-network
+
+volumes:
+  postgres-data:
+networks:
+  exchanger-network:
+    driver: bridge

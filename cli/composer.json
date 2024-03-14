@@ -1,0 +1,19 @@
+{
+    "name": "craftrac/exchanger-cli",
+    "type": "project",
+    "require": {
+        "altorouter/altorouter": "^2.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Exchanger\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Craftrac",
+            "email": "dev@orbitplum.com"
+        }
+    ]
+}
