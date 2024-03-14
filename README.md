@@ -49,3 +49,11 @@ requirements:
 ```shell
 php /app/index.php <action> [<parameter1> <parameter2>]
 ```
+
+## Extra notes
+
+### Database initialization
+The database is initialized when the container starts by running a series of SQL statements. You can find those statements inside the `init.sql` file in the dataset folder.
+
+### Cronjob
+The cronjob is initialized to be run every day at 5:45. You may modify the cronjob to suit your needs by editing the `Dockerfile` "setup cronjob" section inside the `cli` folder.
